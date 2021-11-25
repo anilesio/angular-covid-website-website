@@ -1,0 +1,68 @@
+<section class="white espaco-p-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 center">
+          <h5 class="negrito">Seleccione um país</h5>
+        </div>
+      </div>
+        <div class="row">
+            <div class="col s12">
+                <form [formGroup]="this.formValue" action="">
+                    <div>
+                        <select name="" (change)="chageValue($event.target)" class="browser-default novo-estilo" formArrayName="select" id="">
+                            <option value="">Seleccione uma opção</option>
+                            <option value="{{item.code}} " *ngFor="let item of indicadorPais">{{item.name}} </option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="center center-align center-block">
+              <h4>{{this.dataCovid?.country}}</h4>
+            <img src="{{this.dataCovid?.countryInfo?.flag}}" class="borda" alt="{{this.dataCovid?.country}}">
+            </div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col s12 m6 l4 espaco-m-top-0">
+          <div class="white-text borda blue z-depth-1 espaco-p-1 borda-2">
+            <h5 class=" espaco-m-baixo-0">Casos activos</h5>
+            <h3 class="negrito espaco-m-top-0">{{this.dataCovid?.active}} </h3>
+          </div>
+        </div>
+        <div class="col s12 m6 l4 espaco-m-top-0">
+            <div class="orange white-text borda z-depth-1 espaco-p-1 borda-2">
+              <h5 class=" espaco-m-baixo-0">Casos críticos</h5>
+              <h3 class="negrito espaco-m-top-0">{{this.dataCovid?.critical}}</h3>
+            </div>
+          </div>
+          <div class="col s12 m6 l4 espaco-m-top-0">
+            <div class="green white-text borda z-depth-1 espaco-p-1 borda-2">
+              <h5 class=" espaco-m-baixo-0">Casos recuperados</h5>
+              <h3 class="negrito espaco-m-top-0">{{this.dataCovid?.recovered}}</h3>
+            </div>
+          </div>
+          <div class="col s12 m6 l4 espaco-m-top-0">
+            <div class="orange darken-3 white-text borda z-depth-1 espaco-p-1 borda-2">
+              <h5 class=" espaco-m-baixo-0">Total de casos </h5>
+              <h3 class="negrito espaco-m-top-0">{{this.dataCovid?.cases}}</h3>
+            </div>
+          </div>
+          <div class="col s12 m6 l4 espaco-m-top-0">
+            <div class="red accent-2 white-text z-depth-1 espaco-p-1 borda-2">
+              <h5 class=" espaco-m-baixo-0">Mortes registadas</h5>
+              <h3 class="negrito espaco-m-top-0">{{this.dataCovid?.deaths}}</h3>
+            </div>
+          </div>
+          <div class="col s12 m6 l4 espaco-m-top-0">
+            <div class="yellow white-text darken-1 borda z-depth-1 espaco-p-1 borda-2">
+              <h5 class=" espaco-m-baixo-0">Total de testes realizados</h5>
+              <h3 class="negrito espaco-m-top-0">{{this.dataCovid?.tests}}</h3>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+  </section>
